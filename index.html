@@ -162,6 +162,24 @@
 				position: relative;
 				color: #f0f0f0 !important;
 			}
+
+			/* .list-item {
+                overflow-y: hidden;
+                max-height: 200px;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(63, 63, 70,0.8) 100%);
+                transition: all 1s ease-in-out !important;
+            }
+
+            .list-item.open {
+                overflow-y: auto;
+                max-height: fit-content;
+                background: rgba(0, 0, 0, 0);
+            } */
+
+			.list-item {
+				max-height: 500px;
+				overflow: auto;
+			}
 		</style>
 </head>
 
@@ -204,7 +222,7 @@
 				
 				</pre>
 			</li> -->
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/30/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">tasks...</span>
@@ -224,7 +242,7 @@ Tasks logic was done
 			</li>
 
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/29/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">don't do the tasks</span>
@@ -245,7 +263,7 @@ Fixed the infinite door in the train lol.
 			</li>
 
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/28/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">just... eyelids</span>
@@ -263,7 +281,7 @@ Made the eyelid, busy day so that's pretty much it.
 			</li>
 
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/27/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">no srsly, I need a break</span>
@@ -274,7 +292,7 @@ Took a break from working on monotone, irl break. Needed it.
 			</pre>
 
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/26/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">I really can't list it</span>
@@ -286,7 +304,7 @@ I can't say what tho...
 			</li>
 
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/25/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">BLURRY</span>
@@ -333,7 +351,7 @@ Cian Byrne found my Twitter, said can we talk privately. And we did talk.
 			</li>
 
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/24/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">not much done...</span>
@@ -345,7 +363,7 @@ Postprocessing and decorated the main menu train a little bit
 				</pre>
 			</li>
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/23/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">A lot of updates</span>
@@ -367,7 +385,7 @@ Fixed loading screen
 			</li>
 
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/22/2024</p>
 					<!-- <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full"></span> -->
@@ -403,7 +421,7 @@ Bugged opening movie and loading screen
 			</li>
 
 
-			<li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
 				<div class="flex items-center justify-between mb-2">
 					<p class="text-zinc-500 text-sm">7/21/2024</p>
 					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">First day of development</span>
@@ -475,6 +493,25 @@ Second one (won):
 			});
 		});
 	</script>
+
+	<!-- <script>
+		const listItems = document.querySelectorAll('.list-item');
+
+		listItems.forEach(listItem => {
+			listItem.addEventListener('click', () => {
+				if (listItem.classList.contains('open')) {
+					listItem.style.maxHeight = '200px';
+				} else {
+					listItem.style.maxHeight = listItem.scrollHeight + 'px';
+				}
+
+				listItem.classList.toggle('open');
+			});
+		});
+
+		const scrollableElement = document.querySelector('.list-item');
+		scrollableElement.style.scrollbarWidth = 'none';
+	</script> -->
 
 </body>
 
