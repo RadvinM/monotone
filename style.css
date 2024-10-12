@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+img {
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.twitter-tweet{
+  margin: 10px !important;
+  /* min-width: 25%; */
+  /* width: 100%; */
+  /* max-width: 25% !important; */
+}
+.twitter-tweet p, .twitter-tweet blockquote  {
+  background-color: #1e2732;
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* This property enables wrapping to the next line */
+  max-width: 100%;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  border-radius: 12px;
+  /* box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.flex-item {
+  /* Customize item styles as needed */
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+}
+.scrollable {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+  background-color: #f0f0f0; /* Set the background color of the scrollbar track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2e2e2e; /* Set the background color of the scrollbar thumb */
+  border-radius: 10px; /* Set the border radius of the scrollbar thumb */
+}
+
+.frosted-glass-header {
+  z-index: 1;
+  /* color: #637498; */
+  background-color: rgba(0, 0, 0, 0.3);/*rgba(255, 255, 255, 0.2);*/
+  backdrop-filter: blur(8px);
+  animation: text 0.8s 0.6s ease backwards;
+  position: relative;
+}
+
+.frosted-glass-searchbar {
+  z-index: 1;
+  /* color: #637498; */
+  background-color: rgba(0, 0, 0, 0.1) !important;/*rgba(255, 255, 255, 0.2);*/
+  backdrop-filter: blur(8px);
+  animation: text 0.8s 0.6s ease backwards;
+  position: relative;
+  color: #f0f0f0 !important;
+}
+
+/* .list-item {
+  max-height: 500px;
+  overflow: auto;
+} */

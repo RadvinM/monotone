@@ -1,296 +1,134 @@
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monotone - Devlogs</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-	<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
-	<script type="text/javascript">
-		window.tailwind.config = {
-			darkMode: ['class'],
-			theme: {
-				extend: {
-					colors: {
-						border: 'hsl(var(--border))',
-						input: 'hsl(var(--input))',
-						ring: 'hsl(var(--ring))',
-						background: 'hsl(var(--background))',
-						foreground: 'hsl(var(--foreground))',
-						primary: {
-							DEFAULT: 'hsl(var(--primary))',
-							foreground: 'hsl(var(--primary-foreground))'
-						},
-						secondary: {
-							DEFAULT: 'hsl(var(--secondary))',
-							foreground: 'hsl(var(--secondary-foreground))'
-						},
-						destructive: {
-							DEFAULT: 'hsl(var(--destructive))',
-							foreground: 'hsl(var(--destructive-foreground))'
-						},
-						muted: {
-							DEFAULT: 'hsl(var(--muted))',
-							foreground: 'hsl(var(--muted-foreground))'
-						},
-						accent: {
-							DEFAULT: 'hsl(var(--accent))',
-							foreground: 'hsl(var(--accent-foreground))'
-						},
-						popover: {
-							DEFAULT: 'hsl(var(--popover))',
-							foreground: 'hsl(var(--popover-foreground))'
-						},
-						card: {
-							DEFAULT: 'hsl(var(--card))',
-							foreground: 'hsl(var(--card-foreground))'
-						},
-					},
-				}
-			}
-		}
-	</script>
-	<style type="text/tailwindcss">
-		@layer base {
-				:root {
-					--background: 0 0% 100%;
-					--foreground: 240 10% 3.9%;
-					--card: 0 0% 100%;
-					--card-foreground: 240 10% 3.9%;
-					--popover: 0 0% 100%;
-					--popover-foreground: 240 10% 3.9%;
-					--primary: 240 5.9% 10%;
-					--primary-foreground: 0 0% 98%;
-					--secondary: 240 4.8% 95.9%;
-					--secondary-foreground: 240 5.9% 10%;
-					--muted: 240 4.8% 95.9%;
-					--muted-foreground: 240 3.8% 46.1%;
-					--accent: 240 4.8% 95.9%;
-					--accent-foreground: 240 5.9% 10%;
-					--destructive: 0 84.2% 60.2%;
-					--destructive-foreground: 0 0% 98%;
-					--border: 240 5.9% 90%;
-					--input: 240 5.9% 90%;
-					--ring: 240 5.9% 10%;
-					--radius: 0.5rem;
-				}
-				.dark {
-					--background: 240 10% 3.9%;
-					--foreground: 0 0% 98%;
-					--card: 240 10% 3.9%;
-					--card-foreground: 0 0% 98%;
-					--popover: 240 10% 3.9%;
-					--popover-foreground: 0 0% 98%;
-					--primary: 0 0% 98%;
-					--primary-foreground: 240 5.9% 10%;
-					--secondary: 240 3.7% 15.9%;
-					--secondary-foreground: 0 0% 98%;
-					--muted: 240 3.7% 15.9%;
-					--muted-foreground: 240 5% 64.9%;
-					--accent: 240 3.7% 15.9%;
-					--accent-foreground: 0 0% 98%;
-					--destructive: 0 62.8% 30.6%;
-					--destructive-foreground: 0 0% 98%;
-					--border: 240 3.7% 15.9%;
-					--input: 240 3.7% 15.9%;
-					--ring: 240 4.9% 83.9%;
-				}
-			}
-		</style>
-		<style>
-			img {
-				border-radius: 20px;
-				margin: 5px;
-				box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-			}
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bg-white dark:bg-slate-900 text-black dark:text-white">
+    <header class="frosted-glass-header py-4 px-6 flex justify-between items-center fixed top-0 left-0 right-0 z-10">
+			<h1 class="text-white text-2xl font-bold">Monotone Devlogs</h1>
 
-			.twitter-tweet{
-				margin: 10px !important;
-				/* min-width: 25%; */
-				/* width: 100%; */
-				/* max-width: 25% !important; */
-			}
-
-			.flex-container {
-				display: flex;
-				flex-wrap: wrap; /* This property enables wrapping to the next line */
-				max-width: 100%;
-				justify-content: flex-start;
-				flex-wrap: nowrap;
-				overflow: hidden;
-				border-radius: 12px;
-				/* box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); */
-			}
-
-			.flex-item {
-				/* Customize item styles as needed */
-				background-color: #f2f2f2;
-				padding: 10px;
-				margin: 5px;
-				border: 1px solid #ddd;
-			}
-			.scrollable {
-				overflow-x: auto;
-				max-width: 100%;
-			}
-
-			::-webkit-scrollbar {
-				width: 10px; /* Set the width of the scrollbar */
-				background-color: #f0f0f0; /* Set the background color of the scrollbar track */
-				border-radius: 10px;
-			}
-
-			::-webkit-scrollbar-thumb {
-				background-color: #2e2e2e; /* Set the background color of the scrollbar thumb */
-				border-radius: 10px; /* Set the border radius of the scrollbar thumb */
-			}
-
-			.frosted-glass-header {
-				z-index: 1;
-				/* color: #637498; */
-				background-color: rgba(0, 0, 0, 0.3);/*rgba(255, 255, 255, 0.2);*/
-				backdrop-filter: blur(8px);
-				animation: text 0.8s 0.6s ease backwards;
-				position: relative;
-			}
-
-			.frosted-glass-searchbar {
-				z-index: 1;
-				/* color: #637498; */
-				background-color: rgba(0, 0, 0, 0.1) !important;/*rgba(255, 255, 255, 0.2);*/
-				backdrop-filter: blur(8px);
-				animation: text 0.8s 0.6s ease backwards;
-				position: relative;
-				color: #f0f0f0 !important;
-			}
-
-			.list-item {
-				max-height: 500px;
-				overflow: auto;
-			}
-		</style>
-</head>
-
-<body>
-
-	<div class="container mx-auto px-4 py-16">
-		<header class="frosted-glass-header py-4 px-6 flex justify-between items-center fixed top-0 left-0 right-0 z-10">
-			<h1 class="text-white text-2xl font-bold">Game Devlog</h1>
 			<nav class="flex space-x-4">
-				<input type="text" id="search-input" placeholder="Search devlogs..." class="frosted-glass-searchbar border-zinc-300 rounded-md px-2 py-1 mr-2 focus:outline-none focus:ring-primary focus:border-primary" />
-				<!-- <a href="#" class="hover:text-gray-200">Home</a>
-			  	<a href="#" class="hover:text-gray-200">About</a>
-			  	<a href="#" class="hover:text-gray-200">Contact</a> -->
+				<input type="text" id="search-input" placeholder="Search devlogs..." class="frosted-glass-search-bar border-zinc-300 rounded-full px-2 py-1 mr-2 shadow-md focus:shadow-xl focus:outline-none text-white"/>
+				<button id="dark-mode-toggle" class="dark-mode-toggle">
+          <span class="dark-mode-icon">🌙</span>
+        </button>
 			</nav>
 		</header>
-		
-		<ul id="devlog-list" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-1">	
-		<!-- <ul id="devlog-list" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"> -->
-			<!-- <div class="flex-container scrollable">
-				<div style="width: 100%; margin: 10px;"></div>
-				<div style="width: 100%; margin: 10px;"></div>
-				<div style="width: 100%; margin: 10px;"></div>
-				<div style="width: 100%; margin: 10px;"></div>
-			</div> -->
 
-			<!-- <li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/23/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">A lot of updates</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">Main menu, sfx, train, and loading screen</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
-				
-				</pre>
-			</li> -->
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/30/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">tasks...</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">Tasks logic</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+<div class="container mx-auto px-4 py-16">
+  <ul id="devlog-list" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-1">	
+    <!-- <ul id="devlog-list" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"> -->
+      <!-- <div class="flex-container scrollable">
+        <div style="width: 100%; margin: 10px;"></div>
+        <div style="width: 100%; margin: 10px;"></div>
+        <div style="width: 100%; margin: 10px;"></div>
+        <div style="width: 100%; margin: 10px;"></div>
+      </div> -->
+
+      <!-- <li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/23/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">A lot of updates</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">Main menu, sfx, train, and loading screen</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        
+        </pre>
+      </li> -->
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/30/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">tasks...</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">Tasks logic</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 Not so much done
 
 Tasks logic was done			
 <div class="flex-container scrollable">
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">What if there was a game in which you needed to NOT do the objectives given to you?<br><br>dllb - Monotone is being made!<a href="https://twitter.com/hashtag/DontLetLifeBlur?src=hash&amp;ref_src=twsrc%5Etfw">#DontLetLifeBlur</a><br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur) <a href="https://t.co/dbupkRQGMM">pic.twitter.com/dbupkRQGMM</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1818264910876348601?ref_src=twsrc%5Etfw">July 30, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">What if there was a game in which you needed to NOT do the objectives given to you?<br><br>dllb - Monotone is being made!<a href="https://twitter.com/hashtag/DontLetLifeBlur?src=hash&amp;ref_src=twsrc%5Etfw">#DontLetLifeBlur</a><br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur) <a href="https://t.co/dbupkRQGMM">pic.twitter.com/dbupkRQGMM</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1818264910876348601?ref_src=twsrc%5Etfw">July 30, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
 </div>
-				</pre>
-			</li>
+        </pre>
+      </li>
 
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/29/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">don't do the tasks</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">Eyelid animations! and tasks UI +bugfixes</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/29/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">don't do the tasks</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">Eyelid animations! and tasks UI +bugfixes</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 Made the eyelid animation, and in the making of that remade the eyelid shader.
 Made the tasks (objectives) gui.
 Fixed the infinite door in the train lol.
 
 <div class="flex-container scrollable">
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">I wanna sleep, same as this guy in monotone<a href="https://twitter.com/hashtag/DontLetLifeBlur?src=hash&amp;ref_src=twsrc%5Etfw">#DontLetLifeBlur</a><br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/horrorgame?src=hash&amp;ref_src=twsrc%5Etfw">#horrorgame</a> <a href="https://twitter.com/hashtag/HorrorGames?src=hash&amp;ref_src=twsrc%5Etfw">#HorrorGames</a> <a href="https://t.co/QRffnOgpRR">pic.twitter.com/QRffnOgpRR</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1817882133064773699?ref_src=twsrc%5Etfw">July 29, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">I wanna sleep, same as this guy in monotone<a href="https://twitter.com/hashtag/DontLetLifeBlur?src=hash&amp;ref_src=twsrc%5Etfw">#DontLetLifeBlur</a><br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/horrorgame?src=hash&amp;ref_src=twsrc%5Etfw">#horrorgame</a> <a href="https://twitter.com/hashtag/HorrorGames?src=hash&amp;ref_src=twsrc%5Etfw">#HorrorGames</a> <a href="https://t.co/QRffnOgpRR">pic.twitter.com/QRffnOgpRR</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1817882133064773699?ref_src=twsrc%5Etfw">July 29, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
 </div>
-				</pre>
-			</li>
+        </pre>
+      </li>
 
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/28/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">just... eyelids</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">Eyelid shader</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/28/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">just... eyelids</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">Eyelid shader</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 Made the eyelid, busy day so that's pretty much it.	
 <div class="flex-container scrollable">
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">took a day off, but I&#39;m back<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://t.co/18uJYxRLW8">pic.twitter.com/18uJYxRLW8</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1817607027948245234?ref_src=twsrc%5Etfw">July 28, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">took a day off, but I&#39;m back<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://t.co/18uJYxRLW8">pic.twitter.com/18uJYxRLW8</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1817607027948245234?ref_src=twsrc%5Etfw">July 28, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
 </div>
-				</pre>
-			</li>
+        </pre>
+      </li>
 
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/27/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">no srsly, I need a break</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">Break day!</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/27/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">no srsly, I need a break</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">Break day!</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 Took a break from working on monotone, irl break. Needed it.
-			</pre>
+      </pre>
 
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/26/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">I really can't list it</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">good stuff happened</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/26/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">I really can't list it</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">good stuff happened</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 I can't say what tho...
-				</pre>
-			</li>
+        </pre>
+      </li>
 
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/25/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">BLURRY</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">A lot of blur shader related things</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/25/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">BLURRY</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">A lot of blur shader related things</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 Separated the blur shader into, gaussian blur and box blur
 Made radial blur
 Made inverse radial blur
@@ -319,59 +157,59 @@ Damn it.
 Cian Byrne found my Twitter, said can we talk privately. And we did talk.
 
 <div class="flex-container scrollable">
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">If I take too long to release monotone, the reason is me literally playing parkour in a horror game for an hour <br><br>for &quot;testing&quot; 😂<br><br>yeah I might disable the jumping, running and crouching for the most of the game that doesn&#39;t need them</p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816363392980095149?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>							
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">when you accidentally make an infinite loop<br><br>the game:<br>monotone, dont let life blur<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/DhDyyTLNIn">pic.twitter.com/DhDyyTLNIn</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816391920328884479?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Just made an intro for:<br><br>Dont Let Life Blur (dllb) <br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur) <br> <br>I&#39;m not really sure about using this as the final intro, so, what&#39;s better than opinions from here? 🎉<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/HorrorGames?src=hash&amp;ref_src=twsrc%5Etfw">#HorrorGames</a> <a href="https://t.co/KR4wehbCMj">pic.twitter.com/KR4wehbCMj</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816486073574346809?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Anyone else suddenly gets hit with the urge to make a bunch of custom branded wallpapers in different color options? <br>because you couldn&#39;t find a wallpaper to please you?<br>just me? ok...<a href="https://twitter.com/hashtag/wallpaper?src=hash&amp;ref_src=twsrc%5Etfw">#wallpaper</a> <a href="https://twitter.com/hashtag/branding?src=hash&amp;ref_src=twsrc%5Etfw">#branding</a> <a href="https://t.co/oDOIRMX1tu">pic.twitter.com/oDOIRMX1tu</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816517644201136578?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">As I&#39;ve said updated the menu with:<br>new buttons<br>subway train sounds, also random trains passing by<br>a bit more post processing<br><br>Dont Let Life Blur<br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/horrorgame?src=hash&amp;ref_src=twsrc%5Etfw">#horrorgame</a> <a href="https://t.co/VFho6JKHgf">https://t.co/VFho6JKHgf</a> <a href="https://t.co/bO8a0xAetf">pic.twitter.com/bO8a0xAetf</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816540111720579188?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Made this inverted radial blur shader for my game series:<br><br>Dont Let Life Blur<br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/horrorgame?src=hash&amp;ref_src=twsrc%5Etfw">#horrorgame</a> <a href="https://twitter.com/hashtag/HorrorGames?src=hash&amp;ref_src=twsrc%5Etfw">#HorrorGames</a> <a href="https://t.co/5QQk7RLCtZ">pic.twitter.com/5QQk7RLCtZ</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816544248784933166?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">If I take too long to release monotone, the reason is me literally playing parkour in a horror game for an hour <br><br>for &quot;testing&quot; 😂<br><br>yeah I might disable the jumping, running and crouching for the most of the game that doesn&#39;t need them</p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816363392980095149?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>							
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">when you accidentally make an infinite loop<br><br>the game:<br>monotone, dont let life blur<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/DhDyyTLNIn">pic.twitter.com/DhDyyTLNIn</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816391920328884479?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Just made an intro for:<br><br>Dont Let Life Blur (dllb) <br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur) <br> <br>I&#39;m not really sure about using this as the final intro, so, what&#39;s better than opinions from here? 🎉<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/HorrorGames?src=hash&amp;ref_src=twsrc%5Etfw">#HorrorGames</a> <a href="https://t.co/KR4wehbCMj">pic.twitter.com/KR4wehbCMj</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816486073574346809?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Anyone else suddenly gets hit with the urge to make a bunch of custom branded wallpapers in different color options? <br>because you couldn&#39;t find a wallpaper to please you?<br>just me? ok...<a href="https://twitter.com/hashtag/wallpaper?src=hash&amp;ref_src=twsrc%5Etfw">#wallpaper</a> <a href="https://twitter.com/hashtag/branding?src=hash&amp;ref_src=twsrc%5Etfw">#branding</a> <a href="https://t.co/oDOIRMX1tu">pic.twitter.com/oDOIRMX1tu</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816517644201136578?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">As I&#39;ve said updated the menu with:<br>new buttons<br>subway train sounds, also random trains passing by<br>a bit more post processing<br><br>Dont Let Life Blur<br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/horrorgame?src=hash&amp;ref_src=twsrc%5Etfw">#horrorgame</a> <a href="https://t.co/VFho6JKHgf">https://t.co/VFho6JKHgf</a> <a href="https://t.co/bO8a0xAetf">pic.twitter.com/bO8a0xAetf</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816540111720579188?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Made this inverted radial blur shader for my game series:<br><br>Dont Let Life Blur<br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/horrorgame?src=hash&amp;ref_src=twsrc%5Etfw">#horrorgame</a> <a href="https://twitter.com/hashtag/HorrorGames?src=hash&amp;ref_src=twsrc%5Etfw">#HorrorGames</a> <a href="https://t.co/5QQk7RLCtZ">pic.twitter.com/5QQk7RLCtZ</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1816544248784933166?ref_src=twsrc%5Etfw">July 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </div>
-			</pre>
-			</li>
+      </pre>
+      </li>
 
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/24/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">not much done...</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">Postprocessing and main menu polish</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/24/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">not much done...</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">Postprocessing and main menu polish</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 Pretty much nothing
 Postprocessing and decorated the main menu train a little bit					
-				</pre>
-			</li>
+        </pre>
+      </li>
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/23/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">A lot of updates</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">Main menu, sfx, train, and loading screen</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/23/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">A lot of updates</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">Main menu, sfx, train, and loading screen</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 Made main menu
 Main menu sfx
 Main menu train (will be used in the main game later)
 Post process 
 Fixed loading screen
 <div class="flex-container scrollable">
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">a little update on don&#39;t let life blur - monotone<br><br>I&#39;ve made:<br>main menu<br>movement<br>blood<br>loading screen<br>and bugs (lot&#39;s of them)<br><br>yay I get to work on the main game now! 🎉 <a href="https://t.co/3fn8lKIzG0">pic.twitter.com/3fn8lKIzG0</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815735017424777242?ref_src=twsrc%5Etfw">July 23, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>		
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">dllb - monotone, here&#39;s a little main menu test, I might change it later, idk it depends of what feedback I get lol<br><br>Dont Let Life Blur (dllb)<br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/BJ6QqpMCHb">pic.twitter.com/BJ6QqpMCHb</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815846145014292853?ref_src=twsrc%5Etfw">July 23, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">a little update on don&#39;t let life blur - monotone<br><br>I&#39;ve made:<br>main menu<br>movement<br>blood<br>loading screen<br>and bugs (lot&#39;s of them)<br><br>yay I get to work on the main game now! 🎉 <a href="https://t.co/3fn8lKIzG0">pic.twitter.com/3fn8lKIzG0</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815735017424777242?ref_src=twsrc%5Etfw">July 23, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>		
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">dllb - monotone, here&#39;s a little main menu test, I might change it later, idk it depends of what feedback I get lol<br><br>Dont Let Life Blur (dllb)<br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/BJ6QqpMCHb">pic.twitter.com/BJ6QqpMCHb</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815846145014292853?ref_src=twsrc%5Etfw">July 23, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
 </div>
-				</pre>
-			</li>
+        </pre>
+      </li>
 
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/22/2024</p>
-					<!-- <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full"></span> -->
-				</div>
-				<h2 class="text-xl font-medium mb-2">IK legs, main menu concept, some posters and bug fixes</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/22/2024</p>
+          <!-- <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full"></span> -->
+        </div>
+        <h2 class="text-xl font-medium mb-2">IK legs, main menu concept, some posters and bug fixes</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 IK LEGGSSS!!!! YES, so now you can walk on any surface and your legs wouldn't look weird
 
 Also the logo for monotone
@@ -392,22 +230,22 @@ Bugged opening movie and loading screen
 
 
 <div class="flex-container scrollable">
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Monotone.<br><br>Dont Let Life Blur (dllb)<br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<br><br>Coming out, soon... (I didn&#39;t decide the release date yet lol)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/2PBtE2ewlc">pic.twitter.com/2PBtE2ewlc</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815350719412572540?ref_src=twsrc%5Etfw">July 22, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
-	<div style="width: 100%; margin: 10px;"></div>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Monotone.<br><br>Dont Let Life Blur (dllb)<br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<br><br>Coming out, soon... (I didn&#39;t decide the release date yet lol)<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/2PBtE2ewlc">pic.twitter.com/2PBtE2ewlc</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815350719412572540?ref_src=twsrc%5Etfw">July 22, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
+  <div style="width: 100%; margin: 10px;"></div>
 </div>
-				</pre>
-			</li>
+        </pre>
+      </li>
 
 
-			<li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
-				<div class="flex items-center justify-between mb-2">
-					<p class="text-zinc-500 text-sm">7/21/2024</p>
-					<span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">First day of development</span>
-				</div>
-				<h2 class="text-xl font-medium mb-2">Choosing the logo for Dont let life blur and setting up movement</h2>
-				<pre class="text-zinc-700" style="white-space: pre-wrap;">
+      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-zinc-500 text-sm">7/21/2024</p>
+          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">First day of development</span>
+        </div>
+        <h2 class="text-xl font-medium mb-2">Choosing the logo for Dont let life blur and setting up movement</h2>
+        <pre class="text-zinc-700" style="white-space: pre-wrap;">
 I quite enjoyed making the movement and animations work, it's been a while since I have made such things, starting on a new game from scratch is so much fun.
 Also I love the new IK rig and retargeting system that unreal has.
 
@@ -418,62 +256,28 @@ Fixed the animations.
 Made crouching and running
 Also I made two versions of a logo for dllb and posted on Twitter to see which one wins. The second one did
 <div class="flex-container">
-	<div>
+  <div>
 First one:
 <img src="./images/dllb_logo_proto1.png" alt="dllb_logo_proto1" class="md:w-1/2">
-	</div>
-	<div>
+  </div>
+  <div>
 Second one (won):
 <img src="./images/dllb_logo_final.png" alt="dllb_logo_final" class="md:w-1/2">
-	</div>
+  </div>
 </div>
 
 <div class="flex-container scrollable">
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">It&#39;s night time where I live, so voting over<br><br>And I guess the results are pretty obvious <br><br>Proto 2 it is 🎉🎉<br>Honestly I liked proto 2 more too <br><br>Thank you everyone, this is literally the first time someone reposted my post on here and the most amount of likes I&#39;ve ever gotten.❤️ <a href="https://t.co/i1OFQX0f6q">pic.twitter.com/i1OFQX0f6q</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815067829118341237?ref_src=twsrc%5Etfw">July 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Dont Let Life Blur (dllb) - logo Prototype 2<br><br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<br><br>Which ever of the logos I have has the most views and/or likes, that will be the franchises logo<br><br> <a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/LogoDesign?src=hash&amp;ref_src=twsrc%5Etfw">#LogoDesign</a> <a href="https://t.co/OYX7GW0zqT">pic.twitter.com/OYX7GW0zqT</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815025112703287763?ref_src=twsrc%5Etfw">July 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Why do transparent images get a BLINDING WHITE BACKGROUND on here? <br><br>Gosh I didn&#39;t want to blind y&#39;all with the logo I posted 😂</p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815006807833579536?ref_src=twsrc%5Etfw">July 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Dont Let Life Blur (dllb) - logo Prototype 1<br><br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<br><br>Which ever of the logos I have has the most views and/or likes, that will be the franchises logo<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/LogoDesign?src=hash&amp;ref_src=twsrc%5Etfw">#LogoDesign</a> <a href="https://t.co/dnCTPvw8sQ">pic.twitter.com/dnCTPvw8sQ</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1814998650180784226?ref_src=twsrc%5Etfw">July 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">It&#39;s night time where I live, so voting over<br><br>And I guess the results are pretty obvious <br><br>Proto 2 it is 🎉🎉<br>Honestly I liked proto 2 more too <br><br>Thank you everyone, this is literally the first time someone reposted my post on here and the most amount of likes I&#39;ve ever gotten.❤️ <a href="https://t.co/i1OFQX0f6q">pic.twitter.com/i1OFQX0f6q</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815067829118341237?ref_src=twsrc%5Etfw">July 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Dont Let Life Blur (dllb) - logo Prototype 2<br><br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<br><br>Which ever of the logos I have has the most views and/or likes, that will be the franchises logo<br><br> <a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/LogoDesign?src=hash&amp;ref_src=twsrc%5Etfw">#LogoDesign</a> <a href="https://t.co/OYX7GW0zqT">pic.twitter.com/OYX7GW0zqT</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815025112703287763?ref_src=twsrc%5Etfw">July 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Why do transparent images get a BLINDING WHITE BACKGROUND on here? <br><br>Gosh I didn&#39;t want to blind y&#39;all with the logo I posted 😂</p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1815006807833579536?ref_src=twsrc%5Etfw">July 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Dont Let Life Blur (dllb) - logo Prototype 1<br><br>a horror game franchise, consisting of short games about, not letting life get repetitive (blur)<br><br>Which ever of the logos I have has the most views and/or likes, that will be the franchises logo<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/LogoDesign?src=hash&amp;ref_src=twsrc%5Etfw">#LogoDesign</a> <a href="https://t.co/dnCTPvw8sQ">pic.twitter.com/dnCTPvw8sQ</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1814998650180784226?ref_src=twsrc%5Etfw">July 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>	
-				</pre>
-			</li>
-		</ul>
-	</div>
+        </pre>
+      </li>
+    </ul>
+</div>
 
-
-
-
-	
-	<script type="text/javascript">
-		const searchInput = document.getElementById('search-input');
-		const devlogList = document.getElementById('devlog-list');
-
-		searchInput.addEventListener('input', () => {
-			const searchTerm = searchInput.value.toLowerCase();
-
-			const filteredItems = Array.from(devlogList.children).filter(item => {
-				const titleElement = item.querySelector('h2');
-				const dateElement = item.querySelector('.text-zinc-500');
-
-				if (!titleElement || !dateElement) {
-					return false; // Ignore items without title or date elements
-				}
-
-				const titleText = titleElement.textContent.toLowerCase();
-				const dateText = dateElement.textContent.toLowerCase();
-
-				return titleText.includes(searchTerm) || dateText.includes(searchTerm);
-			});
-
-			Array.from(devlogList.children).forEach(item => {
-				if (!filteredItems.includes(item)) {
-					item.style.display = 'none';
-				} else {
-					item.style.display = 'block';
-				}
-			});
-		});
-	</script>
-
-</body>
-
+    
+    <script type="text/javascript" src="/main.js"></script>
+  </body>
 </html>
