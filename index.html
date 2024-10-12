@@ -494,6 +494,26 @@ Second one (won):
 		});
 	</script>
 
+	<script>
+		const devlogFiles = [
+		"devlog_07212024.html",
+		// ... add more filenames here
+		];
+
+		async function loadDevlogs() {
+		for (const file of devlogFiles) {
+			const response = await fetch(file);
+			const htmlContent = await response.text();
+
+			const devlogElement = document.createElement("li");
+			devlogElement.innerHTML = htmlContent;
+			document.getElementById("devlog-list").appendChild(devlogElement);
+		}
+		}
+
+		loadDevlogs();
+  </script>
+
 	<!-- <script>
 		const listItems = document.querySelectorAll('.list-item');
 
