@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="build.css">
   </head>
-  <body class="bg-white dark:bg-slate-900 text-black dark:text-white">
+  <body class="bg-white dark:bg-slate-900 text-black dark:text-white dark">
     <header class="frosted-glass-header py-4 px-6 flex justify-between items-center fixed top-0 left-0 right-0 z-10">
 			<h1 class="text-white text-2xl font-bold">Monotone Devlogs</h1>
 
-			<nav class="flex space-x-4">
-				<input type="text" id="search-input" placeholder="Search devlogs..." class="frosted-glass-search-bar border-zinc-300 rounded-full px-2 py-1 mr-2 shadow-md focus:shadow-xl focus:outline-none text-white"/>
-				<button id="dark-mode-toggle" class="dark-mode-toggle">
+			<nav class="flex space-x-2">
+				<input type="text" id="search-input" placeholder="Search devlogs..." class="frosted-glass-searchbar border-zinc-300 rounded-full px-2 py-1 mr-0 shadow-md focus:shadow-xl focus:outline-none text-white"/>
+				<button id="dark-mode-toggle" class="dark-mode-toggle ml-0">
           <span class="dark-mode-icon">🌙</span>
         </button>
 			</nav>
@@ -23,7 +23,6 @@
 
 <div class="container mx-auto px-4 py-16">
   <ul id="devlog-list" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-1">	
-    <!-- <ul id="devlog-list" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"> -->
       <!-- <div class="flex-container scrollable">
         <div style="width: 100%; margin: 10px;"></div>
         <div style="width: 100%; margin: 10px;"></div>
@@ -34,20 +33,20 @@
       <!-- <li class="bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/23/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">A lot of updates</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">A lot of updates</span>
         </div>
         <h2 class="text-xl font-medium mb-2">Main menu, sfx, train, and loading screen</h2>
         <pre class="text-zinc-700" style="white-space: pre-wrap;">
         
         </pre>
       </li> -->
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/30/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">tasks...</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">tasks...</span>
         </div>
         <h2 class="text-xl font-medium mb-2">Tasks logic</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 Not so much done
 
 Tasks logic was done			
@@ -61,13 +60,13 @@ Tasks logic was done
       </li>
 
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/29/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">don't do the tasks</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">don't do the tasks</span>
         </div>
         <h2 class="text-xl font-medium mb-2">Eyelid animations! and tasks UI +bugfixes</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 Made the eyelid animation, and in the making of that remade the eyelid shader.
 Made the tasks (objectives) gui.
 Fixed the infinite door in the train lol.
@@ -82,13 +81,13 @@ Fixed the infinite door in the train lol.
       </li>
 
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/28/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">just... eyelids</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">just... eyelids</span>
         </div>
         <h2 class="text-xl font-medium mb-2">Eyelid shader</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 Made the eyelid, busy day so that's pretty much it.	
 <div class="flex-container scrollable">
   <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">took a day off, but I&#39;m back<a href="https://twitter.com/hashtag/indiegame?src=hash&amp;ref_src=twsrc%5Etfw">#indiegame</a> <a href="https://t.co/18uJYxRLW8">pic.twitter.com/18uJYxRLW8</a></p>&mdash; RadvinM (@RadvinM_) <a href="https://twitter.com/RadvinM_/status/1817607027948245234?ref_src=twsrc%5Etfw">July 28, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -100,36 +99,36 @@ Made the eyelid, busy day so that's pretty much it.
       </li>
 
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/27/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">no srsly, I need a break</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">no srsly, I need a break</span>
         </div>
         <h2 class="text-xl font-medium mb-2">Break day!</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 Took a break from working on monotone, irl break. Needed it.
       </pre>
 
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/26/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">I really can't list it</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">I really can't list it</span>
         </div>
         <h2 class="text-xl font-medium mb-2">good stuff happened</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 I can't say what tho...
         </pre>
       </li>
 
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/25/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">BLURRY</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">BLURRY</span>
         </div>
         <h2 class="text-xl font-medium mb-2">A lot of blur shader related things</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 Separated the blur shader into, gaussian blur and box blur
 Made radial blur
 Made inverse radial blur
@@ -170,25 +169,25 @@ Cian Byrne found my Twitter, said can we talk privately. And we did talk.
       </li>
 
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/24/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">not much done...</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">not much done...</span>
         </div>
         <h2 class="text-xl font-medium mb-2">Postprocessing and main menu polish</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 Pretty much nothing
 Postprocessing and decorated the main menu train a little bit					
         </pre>
       </li>
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/23/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">A lot of updates</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">A lot of updates</span>
         </div>
         <h2 class="text-xl font-medium mb-2">Main menu, sfx, train, and loading screen</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 Made main menu
 Main menu sfx
 Main menu train (will be used in the main game later)
@@ -204,13 +203,13 @@ Fixed loading screen
       </li>
 
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/22/2024</p>
-          <!-- <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full"></span> -->
+          <!-- <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full"></span> -->
         </div>
         <h2 class="text-xl font-medium mb-2">IK legs, main menu concept, some posters and bug fixes</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 IK LEGGSSS!!!! YES, so now you can walk on any surface and your legs wouldn't look weird
 
 Also the logo for monotone
@@ -240,13 +239,13 @@ Bugged opening movie and loading screen
       </li>
 
 
-      <li class="list-item bg-card rounded-md p-4 shadow-sm hover:shadow-lg">
+      <li class="list-item bg-card rounded-md p-4 shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <p class="text-zinc-500 text-sm">7/21/2024</p>
-          <span class="text-zinc-500 text-sm font-medium bg-accent px-2 py-1 rounded-full">First day of development</span>
+          <span class="text-zinc-500 dark:text-white text-sm font-medium bg-zinc-100 dark:bg-slate-500 px-2 py-1 rounded-full">First day of development</span>
         </div>
         <h2 class="text-xl font-medium mb-2">Choosing the logo for Dont let life blur and setting up movement</h2>
-        <pre class="text-zinc-700" style="white-space: pre-wrap;">
+        <pre class="text-zinc-700 dark:text-white" style="white-space: pre-wrap;">
 I quite enjoyed making the movement and animations work, it's been a while since I have made such things, starting on a new game from scratch is so much fun.
 Also I love the new IK rig and retargeting system that unreal has.
 
@@ -279,6 +278,44 @@ Second one (won):
 </div>
 
     
-    <script type="text/javascript" src="/main.js"></script>
+    <script type="text/javascript">
+      const searchInput = document.getElementById('search-input');
+      const devlogList = document.getElementById('devlog-list');
+
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        const filteredItems = Array.from(devlogList.children).filter(item => {
+          const titleElement = item.querySelector('h2');
+          const dateElement = item.querySelector('.text-zinc-500');
+
+          if (!titleElement || !dateElement) {
+            return false; // Ignore items without title or date elements
+          }
+
+          const titleText = titleElement.textContent.toLowerCase();
+          const dateText = dateElement.textContent.toLowerCase();
+
+          return titleText.includes(searchTerm) || dateText.includes(searchTerm);
+        });
+
+        Array.from(devlogList.children).forEach(item => {
+          if (!filteredItems.includes(item)) {
+            item.style.display = 'none';
+          } else {
+            item.style.display = 'block';
+          }
+        });
+      });
+
+
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+      function toggleDarkMode() {
+          document.body.classList.toggle('dark');
+      }
+
+      darkModeToggle.addEventListener('click', toggleDarkMode);
+    </script>
   </body>
 </html>
