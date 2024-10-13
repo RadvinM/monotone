@@ -79,3 +79,21 @@ img {
   max-height: 500px;
   overflow: auto;
 } */
+  
+.ball {
+  /* width: 2rem;
+  height: 2rem; */
+  border-radius: 50%;
+  box-shadow: inset -12px -8px 3px white;
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+.sun {
+  transform: rotate(180deg);
+  box-shadow: inset -60px -60px 60px #fdb813, 6px 6px 35px #fdb813, -6px -6px 35px #fdb813;
+}
+
+.blue {
+  background: lightblue;
+}
