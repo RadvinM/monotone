@@ -13,6 +13,10 @@ img {
   margin: 5px;
 }
 
+a {
+  text-decoration: underline !important;
+}
+
 .twitter-tweet{
   margin: 10px !important;
   /* min-width: 25%; */
